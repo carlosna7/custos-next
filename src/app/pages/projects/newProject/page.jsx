@@ -15,7 +15,7 @@ const NewProject = () => {
     project.services = []
     project.history
 
-    fetch('https://json-test-carlosna7.vercel.app/projects', {
+    fetch('https://json-server-carlosna7.vercel.app/projects', {
       method: 'POST',
       headers: {
           "Content-Type": "application/json",
