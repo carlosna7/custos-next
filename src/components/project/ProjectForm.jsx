@@ -11,7 +11,7 @@ const ProjectForm = ({ handleSubmit, btnText, projectData }) => {
     const [project, setProject] = useState(projectData || {})
 
     useEffect(() => {
-        fetch('https://json-test-carlosna7.vercel.app/categories', {
+        fetch('https://json-server-carlosna7.vercel.app/categories', {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

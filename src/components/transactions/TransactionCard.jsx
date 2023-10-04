@@ -72,7 +72,7 @@ const TransactionCard = ({ dataChanged, onDataChange, historyData }) => {
   useEffect(() => {
     // Fetch inicial quando a página carrega
     if (isLoading) {
-      fetch(`https://json-test-carlosna7.vercel.app/projects/${id}`, {
+      fetch(`https://json-server-carlosna7.vercel.app/projects/${id}`, {
         method: "GET",
         headers: {
           "Content-type": "application/json",

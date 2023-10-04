@@ -206,8 +206,8 @@ const Project = () => {
       })
       .catch((error) => {
         console.log(error)
-      });
-  };
+      })
+  }
 
   return (
     <>{project.name ? 
