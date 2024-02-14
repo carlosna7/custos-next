@@ -8,6 +8,8 @@ import { useSearchParams } from 'next/navigation'
 import React, { useState, useEffect } from 'react'
 import Loading from '@/components/layout/Loading'
 
+import { useRouter } from 'next/navigation'
+
 const Projects = () => {
 
   const [ projectsList, setProjectsList] = useState([]);
@@ -15,11 +17,15 @@ const Projects = () => {
   const [ projectMsg, setProjectMsg ] = useState('')
 
   const searchParams = useSearchParams();  
-  const message = searchParams.get('query');
+  let message = searchParams.get('query');
+
+  const router = useRouter()
+
+  
 
   useEffect(() => {    
 
-    fetch("https://json-server-carlosna7.vercel.app/projects", {
+    fetch("http://localhost:5000/projects", {
       method: "GET",
       headers: {
         "Content-type": "application/json"
@@ -33,6 +39,10 @@ const Projects = () => {
     .catch((erro) => {
       console.log(erro)
     })
+
+    setTimeout(() => {
+      router.replace("/pages/projects")
+    }, 5000)
  
   }, [])
 
@@ -40,7 +50,7 @@ const Projects = () => {
 
     console.log(`log id da projects = ${id}`)
 
-    fetch(`https://json-server-carlosna7.vercel.app/projects/${id}`, {
+    fetch(`http://localhost:5000/projects/${id}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json"

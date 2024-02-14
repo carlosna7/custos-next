@@ -11,14 +11,16 @@ const NewProject = () => {
   const query = "Projeto criado com sucesso!"
 
   const createPost = (project) => {
+
+    
     project.costs = 0
     project.services = []
     project.history
-
-    fetch('https://json-server-carlosna7.vercel.app/projects', {
+    
+    fetch('http://localhost:5000/projects', {
       method: 'POST',
       headers: {
-          "Content-Type": "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(project),
     })

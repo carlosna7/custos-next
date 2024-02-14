@@ -1,55 +1,76 @@
 {
   "projects": [
     {
-      "name": "p5",
-      "budget": "500",
+      "id": "ec38",
+      "name": "proejto - 01",
+      "history": [
+        {
+          "nome": "proejto 1",
+          "valor": "100"
+        },
+        {
+          "nome": "proejto - 01",
+          "valor": "1000"
+        }
+      ],
+      "budget": "1000",
       "category": {
         "id": "1",
         "name": "Infra"
       },
       "costs": 0,
-      "services": [],
-      "history": [
-        {
-          "nome": "p5",
-          "valor": "500"
-        }
-      ],
-      "id": 5
+      "services": []
     },
     {
-      "name": "projeto 7",
+      "id": "f822",
+      "name": "projeto 2",
       "history": [
         {
-          "nome": "projeto 7",
-          "valor": "7000"
+          "nome": "projeto 2",
+          "valor": "200"
         }
       ],
-      "budget": "7000",
+      "budget": "200",
       "category": {
-        "id": "4",
-        "name": "Planejamento"
+        "id": "2",
+        "name": "Desenvolvimento"
       },
       "costs": 0,
-      "services": [],
-      "id": 7
+      "services": []
+    },
+    {
+      "id": "4605",
+      "name": "projeto 3",
+      "history": [
+        {
+          "nome": "projeto 3",
+          "valor": "300"
+        }
+      ],
+      "budget": "300",
+      "category": {
+        "id": "3",
+        "name": "Design"
+      },
+      "costs": 0,
+      "services": []
     }
   ],
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Infra"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Desenvolvimento"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Design"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Planejamento"
     }
   ]
