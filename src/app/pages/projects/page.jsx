@@ -8,8 +8,6 @@ import { useSearchParams } from 'next/navigation'
 import React, { useState, useEffect } from 'react'
 import Loading from '@/components/layout/Loading'
 
-import { useRouter } from 'next/navigation'
-
 const Projects = () => {
 
   const [ projectsList, setProjectsList] = useState([]);
@@ -18,10 +16,6 @@ const Projects = () => {
 
   const searchParams = useSearchParams();  
   let message = searchParams.get('query');
-
-  const router = useRouter()
-
-  
 
   useEffect(() => {    
 
@@ -39,10 +33,6 @@ const Projects = () => {
     .catch((erro) => {
       console.log(erro)
     })
-
-    setTimeout(() => {
-      router.replace("/pages/projects")
-    }, 5000)
  
   }, [])
 

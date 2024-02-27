@@ -159,7 +159,7 @@ const Project = () => {
     fetch(`https://json-server-carlosna7.vercel.app/projects/${projectUpdated.id}`, {
       method: "PATCH",
       headers: {
-        "Content-type": "application/json"
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(projectUpdated)
     })
