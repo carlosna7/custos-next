@@ -2,14 +2,14 @@
   "projects": [
     {
       "id": "ec38",
-      "name": "proejto - 01",
+      "name": "projeto - 01",
       "history": [
         {
-          "nome": "proejto 1",
+          "nome": "projeto 1",
           "valor": "100"
         },
         {
-          "nome": "proejto - 01",
+          "nome": "projeto - 01",
           "valor": "1000"
         }
       ],

@@ -25,7 +25,7 @@ const Projects = () => {
 
   useEffect(() => {    
 
-    fetch("http://localhost:5000/projects", {
+    fetch("https://json-server-carlosna7.vercel.app/projects", {
       method: "GET",
       headers: {
         "Content-type": "application/json"
@@ -50,7 +50,7 @@ const Projects = () => {
 
     console.log(`log id da projects = ${id}`)
 
-    fetch(`http://localhost:5000/projects/${id}`, {
+    fetch(`https://json-server-carlosna7.vercel.app/projects/${id}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json"
