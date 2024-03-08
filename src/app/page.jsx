@@ -1,5 +1,6 @@
 import LinkButton from "@/components/layout/LinkButton";
 import Section from "@/components/layout/Section";
+import Notification from "@/components/popup/Notification";
 import Image from "next/image";
 
 export default function Home() {
@@ -9,6 +10,9 @@ export default function Home() {
         <p className="pb-10">Começe a gerenciar seu projetos agora mesmo</p>
         <LinkButton href="/pages/projects/newProject" text="NOVO PROJETO"/>
         <Image src='/images/main-img.png' alt='main-img' width={450} height={450} />
+
+        <Notification />
+
     </Section> 
     )
 }

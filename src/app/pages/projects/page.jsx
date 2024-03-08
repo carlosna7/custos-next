@@ -19,7 +19,7 @@ const Projects = () => {
 
   useEffect(() => {    
 
-    fetch("https://json-server-carlosna7.vercel.app/projects", {
+    fetch("http://localhost:5000/", {
       method: "GET",
       headers: {
         "Content-type": "application/json"
@@ -36,11 +36,13 @@ const Projects = () => {
  
   }, [])
 
-  const removeProject = (id) => {
+  const removeProject = (_id) => {
 
-    console.log(`log id da projects = ${id}`)
+    console.log(_id)
 
-    fetch(`https://json-server-carlosna7.vercel.app/projects/${id}`, {
+    console.log(`log id da projects = ${_id}`)
+
+    fetch(`http://localhost:5000/${_id}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json"
@@ -48,7 +50,7 @@ const Projects = () => {
     })
     .then((response) => response.json())
     .then((data) => {
-      setProjectsList(projectsList.filter((proj) => proj.id !== id))
+      setProjectsList(projectsList.filter((proj) => proj._id !== _id))
       setProjectMsg("Projeto removido com sucesso")
 
       setTimeout(() => {
@@ -75,11 +77,11 @@ const Projects = () => {
       <div className='grid grid-cols-3'>
         {projectsList.length > 0 && projectsList.map((project) => 
           <ProjectCard
-            id={project.id} 
+            _id={project._id} 
             name={project.name}
             budget={project.budget}
             category={project.category.name}
-            key={project.id} 
+            key={project._id} 
             handleRemove={removeProject}
           />
         )}

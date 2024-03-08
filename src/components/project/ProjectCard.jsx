@@ -1,14 +1,14 @@
 import Link from 'next/link'
 import React from 'react'
 
-const ProjectCard = ({ id, name, budget, category, handleRemove }) => {
+const ProjectCard = ({ _id, name, budget, category, handleRemove }) => {
 
-  // console.log(`log todos id = ${id}`)
+  // console.log(`log todos id = ${_id}`)
   
   const remove = (ev) => {
     // console.log(`log id excluido = ${id}`)
     ev.preventDefault();
-    handleRemove(id)
+    handleRemove(_id)
   }
 
   return (
@@ -17,7 +17,7 @@ const ProjectCard = ({ id, name, budget, category, handleRemove }) => {
         <p className='text-slate-600'><span className='text-slate-800 font-bold'>Orçamento:</span>R${budget}</p>
         <p><span></span>{category}</p>
         <div className='flex justify-between'>
-            <Link href={`/pages/projects/project/${id}`}>Editar</Link>
+            <Link href={`/pages/projects/project/${_id}`}>Editar</Link>
             <button onClick={remove}>Remover</button>
         </div>
     </div>
