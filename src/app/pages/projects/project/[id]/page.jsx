@@ -14,9 +14,9 @@ import TransactionCard from '@/components/transactions/TransactionCard'
 
 const Project = () => {
 
-  // criar modal sempre que abrir o formulário de edição de pórjeto, adição de serviços e o outro bagulhete que eu vou adivcionar
-
   const { id } = useParams() // destructuring
+
+  console.log(id)
 
   const [ project, setProject ] = useState([])
   const [ services, setServices ] = useState([])
@@ -31,14 +31,15 @@ const Project = () => {
   useEffect(() => {
 
     setTimeout(() => {
-      fetch(`https://json-server-carlosna7.vercel.app/projects/${id}`, {
-      method: "GET",
-      headers: {
-        "Content-type": "application/json"
-      }
+      fetch(`http://localhost:5000/project/${id}`, {
+        method: "GET",
+        headers: {
+          "Content-type": "application/json"
+        }
       })
       .then((response) => response.json())
-      .then((data) => {
+      .then((data) => { 
+
         setProject(data)
         setServices(data.services)
         setCurrentHistory(data.history)
