@@ -16,7 +16,7 @@ const Project = () => {
 
   const { id } = useParams() // destructuring
 
-  console.log(id)
+  // console.log(id)
 
   const [ project, setProject ] = useState([])
   const [ services, setServices ] = useState([])
@@ -39,6 +39,8 @@ const Project = () => {
       })
       .then((response) => response.json())
       .then((data) => { 
+      
+        console.log(data)
 
         setProject(data)
         setServices(data.services)
@@ -61,7 +63,7 @@ const Project = () => {
       return false
     }
 
-    fetch(`https://json-server-carlosna7.vercel.app/projects/${project.id}`, {
+    fetch(`http://localhost:5000/project/${project._id}`, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json"
@@ -128,7 +130,7 @@ const Project = () => {
 
     project.costs = newCost;
 
-    fetch(`https://json-server-carlosna7.vercel.app/projects/${project.id}`, {
+    fetch(`http://localhost:5000/project/${project._id}`, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json"
@@ -157,7 +159,7 @@ const Project = () => {
 
     projectUpdated.costs = parseFloat(projectUpdated.costs) - parseFloat(costs)
 
-    fetch(`https://json-server-carlosna7.vercel.app/projects/${projectUpdated.id}`, {
+    fetch(`http://localhost:5000/project/${projectUpdated.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -193,7 +195,7 @@ const Project = () => {
   }
 
   const saveUpdatedProject = (historico) => {
-    fetch(`https://json-server-carlosna7.vercel.app/projects/${historico.id}`, {
+    fetch(`http://localhost:5000/project/${historico._id}`, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",

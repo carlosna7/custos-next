@@ -72,7 +72,7 @@ const TransactionCard = ({ dataChanged, onDataChange, historyData }) => {
   useEffect(() => {
     // Fetch inicial quando a página carrega
     if (isLoading) {
-      fetch(`https://json-server-carlosna7.vercel.app/projects/${id}`, {
+      fetch(`http://localhost:5000/project/${id}`, {
         method: "GET",
         headers: {
           "Content-type": "application/json",
@@ -80,8 +80,9 @@ const TransactionCard = ({ dataChanged, onDataChange, historyData }) => {
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log("dados projeto atual")
-          console.log(data)
+
+          // console.log("dados projeto atual")
+          // console.log(data)
 
           setCurrentData(data)
           setFirstValue(data.history[0])
@@ -98,7 +99,7 @@ const TransactionCard = ({ dataChanged, onDataChange, historyData }) => {
   useEffect(() => {
 
     if (dataChanged) {
-      fetch(`https://json-server-carlosna7.vercel.app/projects/${id}`, {
+      fetch(`http://localhost:5000/project/${id}`, {
         method: "GET",
         headers: {
           "Content-type": "application/json",
@@ -106,8 +107,9 @@ const TransactionCard = ({ dataChanged, onDataChange, historyData }) => {
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log("dados projeto alterado");
-          console.log(data)
+          
+          // console.log("dados projeto alterado")
+          // console.log(data)
 
           setHistoryItems(data.history)
           setCurrentData(data)
