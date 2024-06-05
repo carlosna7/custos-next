@@ -11,68 +11,11 @@ const TransactionCard = ({ dataChanged, onDataChange, historyData }) => {
   const [ currentData, setCurrentData ] = useState(null)
   const [ firstValue, setFirstValue ] = useState(null)
   const [ isLoading, setIsLoading ] = useState(true)
- 
-  
-  // useEffect(() => {
-
-  //   // fetch para quando algum valor do banco de dados for alterado
-  //   if(dataChanged) {
-  //     fetch(`http://localhost:5000/projects/${id}`, {
-  //       method: "GET",
-  //       headers: {
-  //         "Content-type": "application/json"
-  //       }
-  //     })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log("dados projeto alterado")
-  //       console.log(data)
-
-  //       setHistoryItems(data.history)
-  //       setCurrentData(data)
-
-  //       submitHistory()
-  //     })
-  //     .catch((erro) => {
-  //       console.log(erro)
-  //     })
-  //   }
-
-  //   if(isLoading) {
-  //     // fetch inicial para quando a página carregar
-  //     fetch(`http://localhost:5000/projects/${id}`, {
-  //       method: "GET",
-  //       headers: {
-  //         "Content-type": "application/json"
-  //       }
-  //     })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log("dados projeto atual")
-  //       console.log(data)
-
-  //       // currentHistory = (data.history)
-
-  //       setCurrentData(data)
-  //       setFirstValue(data.history[0])
-
-  //       setHistoryItems(data.history)
-        
-  //     })
-  //     .catch((erro) => {
-  //       console.log(erro)
-  //     })
-
-  //     setIsLoading(false)
-  //   }
-    
-  // }, [id, dataChanged, onDataChange])
-
 
   useEffect(() => {
     // Fetch inicial quando a página carrega
     if (isLoading) {
-      fetch(`https://api-custos-next.onrender.com/project/${id}`, {
+      fetch(`http://localhost:5000/project/${id}`, {
         method: "GET",
         headers: {
           "Content-type": "application/json",
@@ -99,7 +42,7 @@ const TransactionCard = ({ dataChanged, onDataChange, historyData }) => {
   useEffect(() => {
 
     if (dataChanged) {
-      fetch(`https://api-custos-next.onrender.com/project/${id}`, {
+      fetch(`http://localhost:5000/project/${id}`, {
         method: "GET",
         headers: {
           "Content-type": "application/json",

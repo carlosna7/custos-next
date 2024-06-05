@@ -3,7 +3,6 @@ import React from 'react'
 const ServiceCard = ({ id, name, costs, description, handleRemove }) => {
 
   const remove = (ev) => {
-    // console.log(`log id excluido = ${id}`)
     ev.preventDefault();
     handleRemove(id, costs)
   }
