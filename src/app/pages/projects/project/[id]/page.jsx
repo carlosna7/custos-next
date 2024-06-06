@@ -50,8 +50,6 @@ const Project = () => {
 
   const editPost = (project) => {
 
-    console.log(project)
-
     if (project.budget < project.costs) {
       setMessage("O orçamento não pode ser menor que o custo do projeto")
       setType("error")
@@ -69,17 +67,12 @@ const Project = () => {
       .then((data) => {
 
         setProject(data)
-        console.log(currentHistory)
 
-        console.log("dados projeto.jsx atualizado")
-        console.log(data)
         const historico = project
         const dadoInserir = { nome: project.name, valor: project.budget }
 
         historico.history = currentHistory
         currentHistory.push(dadoInserir)
-        console.log("historico")
-        console.log(historico)
 
         setShowProjectForm(false)
         setShowServiceForm(false)
@@ -92,7 +85,7 @@ const Project = () => {
           setMessage('')
         }, 3500)
 
-        saveUpdatedProject(historico);
+        saveUpdatedProject(historico)
 
       })
       .catch((erro) => {
@@ -103,6 +96,8 @@ const Project = () => {
   }
 
   const createService = (project) => {
+
+    console.log(project)
 
     const lastService = project.services[project.services.length - 1]
 
@@ -133,6 +128,7 @@ const Project = () => {
       .then((response) => response.json())
       .then((data) => {
         setProject(data)
+        setServices(data.services)
         setShowServiceForm(false)
         setDataChanged(true)
       })
@@ -202,8 +198,7 @@ const Project = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Projeto atualizado com histórico!")
-        console.log(data)
+        console.log("Projeto atualizado com histórico!", data)
       })
       .catch((error) => {
         console.log(error)
