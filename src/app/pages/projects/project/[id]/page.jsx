@@ -28,7 +28,7 @@ const Project = () => {
   useEffect(() => {
 
     setTimeout(() => {
-      fetch(`http://localhost:5000/project/${id}`, {
+      fetch(`https://api-custos-next.onrender.com/project/${id}`, {
         method: "GET",
         headers: {
           "Content-type": "application/json"
@@ -56,7 +56,7 @@ const Project = () => {
       return false
     }
 
-    fetch(`http://localhost:5000/project/${project._id}`, {
+    fetch(`https://api-custos-next.onrender.com/project/${project._id}`, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json"
@@ -118,7 +118,7 @@ const Project = () => {
 
     project.costs = newCost;
 
-    fetch(`http://localhost:5000/project/${project._id}`, {
+    fetch(`https://api-custos-next.onrender.com/project/${project._id}`, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json"
@@ -153,7 +153,7 @@ const Project = () => {
 
     projectUpdated.costs = parseFloat(projectUpdated.costs) - parseFloat(costs)
 
-    fetch(`http://localhost:5000/project/${projectId}`, {
+    fetch(`https://api-custos-next.onrender.com/project/${projectId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -189,7 +189,7 @@ const Project = () => {
   }
 
   const saveUpdatedProject = (historico) => {
-    fetch(`http://localhost:5000/project/${historico._id}`, {
+    fetch(`https://api-custos-next.onrender.com/project/${historico._id}`, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",

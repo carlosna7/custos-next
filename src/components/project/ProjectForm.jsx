@@ -31,10 +31,6 @@ const ProjectForm = ({ handleSubmit, btnText, projectData }) => {
         handleSubmit(project)
     }
 
-    // const handleChange = (ev) => {
-    //     setProject({...project, [ev.target.name]: ev.target.value})
-    // }
-
     const handleChange = (ev) => {
         const { name, value } = ev.target
       

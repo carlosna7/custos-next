@@ -17,7 +17,7 @@ const NewProject = () => {
     project.services = []
     project.history
     
-    fetch('http://localhost:5000/project', {
+    fetch('https://api-custos-next.onrender.com/project', {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",

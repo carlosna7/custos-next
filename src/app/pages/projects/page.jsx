@@ -19,7 +19,7 @@ const Projects = () => {
 
   useEffect(() => {    
 
-    fetch("http://localhost:5000/project", {
+    fetch("https://api-custos-next.onrender.com/project", {
       method: "GET",
       headers: {
         "Content-type": "application/json"
@@ -42,7 +42,7 @@ const Projects = () => {
     
     console.log(`log id da projects = ${_id}`)
 
-    fetch(`http://localhost:5000/project/${_id}`, {
+    fetch(`https://api-custos-next.onrender.com/project/${_id}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json"
