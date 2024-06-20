@@ -7,24 +7,14 @@ import SubmitButton from './form/SubmitButton'
 
 const ProjectForm = ({ handleSubmit, btnText, projectData }) => {
 
-    const [categories, setCategories] = useState([]);
     const [project, setProject] = useState(projectData || {})
 
-    useEffect(() => {
-        fetch('https://json-server-carlosna7.vercel.app/categories', {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            }
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            setCategories(data)
-        })
-        .catch((erro) => {
-            console.log(erro)
-        })
-    }, [])
+    const categories = [
+        { id: '1', name: 'Infra' },
+        { id: '2', name: 'Desenvolvimento' },
+        { id: '3', name: 'Design' },
+        { id: '4', name: 'Planejamento' }
+    ]
 
     const submit = (ev) => {
         ev.preventDefault()
